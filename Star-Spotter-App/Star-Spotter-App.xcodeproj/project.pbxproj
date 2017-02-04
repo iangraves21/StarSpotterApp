@@ -13,6 +13,9 @@
 		2FD63DAE1E4667F500DD9C25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD63DAC1E4667F500DD9C25 /* Main.storyboard */; };
 		2FD63DB01E4667F500DD9C25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FD63DAF1E4667F500DD9C25 /* Assets.xcassets */; };
 		2FD63DB31E4667F500DD9C25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD63DB11E4667F500DD9C25 /* LaunchScreen.storyboard */; };
+		B04027301E466E7600163D0C /* Messier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B040272F1E466E7600163D0C /* Messier.swift */; };
+		B04027371E46714500163D0C /* messier.json in Resources */ = {isa = PBXBuildFile; fileRef = B04027351E46714500163D0C /* messier.json */; };
+		B04027381E46714500163D0C /* MessierImages in Resources */ = {isa = PBXBuildFile; fileRef = B04027361E46714500163D0C /* MessierImages */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		2FD63DAF1E4667F500DD9C25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FD63DB21E4667F500DD9C25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FD63DB41E4667F500DD9C25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B040272F1E466E7600163D0C /* Messier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Messier.swift; path = "../../../untitled folder/StarSpotterApp/StarSpotterApp/Messier.swift"; sourceTree = "<group>"; };
+		B04027351E46714500163D0C /* messier.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = messier.json; sourceTree = "<group>"; };
+		B04027361E46714500163D0C /* MessierImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MessierImages; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 		2FD63DA51E4667F500DD9C25 /* Star-Spotter-App */ = {
 			isa = PBXGroup;
 			children = (
+				B04027351E46714500163D0C /* messier.json */,
+				B04027361E46714500163D0C /* MessierImages */,
 				2FD63DA61E4667F500DD9C25 /* AppDelegate.swift */,
 				2FD63DA81E4667F500DD9C25 /* MasterViewController.swift */,
 				2FD63DAA1E4667F500DD9C25 /* DetailViewController.swift */,
@@ -63,6 +71,7 @@
 				2FD63DAF1E4667F500DD9C25 /* Assets.xcassets */,
 				2FD63DB11E4667F500DD9C25 /* LaunchScreen.storyboard */,
 				2FD63DB41E4667F500DD9C25 /* Info.plist */,
+				B040272F1E466E7600163D0C /* Messier.swift */,
 			);
 			path = "Star-Spotter-App";
 			sourceTree = "<group>";
@@ -126,8 +135,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B04027371E46714500163D0C /* messier.json in Resources */,
 				2FD63DB31E4667F500DD9C25 /* LaunchScreen.storyboard in Resources */,
 				2FD63DB01E4667F500DD9C25 /* Assets.xcassets in Resources */,
+				B04027381E46714500163D0C /* MessierImages in Resources */,
 				2FD63DAE1E4667F500DD9C25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B04027301E466E7600163D0C /* Messier.swift in Sources */,
 				2FD63DAB1E4667F500DD9C25 /* DetailViewController.swift in Sources */,
 				2FD63DA91E4667F500DD9C25 /* MasterViewController.swift in Sources */,
 				2FD63DA71E4667F500DD9C25 /* AppDelegate.swift in Sources */,
@@ -303,6 +315,7 @@
 				2FD63DB91E4667F500DD9C25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

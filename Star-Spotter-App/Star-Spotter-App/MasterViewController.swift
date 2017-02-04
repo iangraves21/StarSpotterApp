@@ -12,12 +12,13 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
-
+    var messiers: [Messier] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        ParseJson()
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         self.navigationItem.rightBarButtonItem = addButton
@@ -51,7 +52,7 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
+                let object = objects[indexPath.row] as! Messier
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
@@ -73,8 +74,9 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        //let object = objects[indexPath.row] as! NSDate
+        let object = objects[indexPath.row] as! Messier
+        cell.textLabel!.text = object.Messier
         return cell
     }
 
@@ -92,6 +94,39 @@ class MasterViewController: UITableViewController {
         }
     }
 
+    func ParseJson () {
+        
+        if let path = Bundle.main.url(forResource: "messier", withExtension: "json") {
+            do {
+                let jsonData = try Data(contentsOf: path, options: .mappedIfSafe)
+                do {
+                    if let jsonResult = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions(rawValue: 0)) as? NSDictionary {
+                        if let messierArray = jsonResult.value(forKey: "MessierObjects") as? NSArray {
+                            for (_, element) in messierArray.enumerated() {
+                                if let element = element as? NSDictionary {
+                                    let messobj = Messier.init(element: element)
+                                    messiers.append(messobj!);
+                                }
+                            }
+                            
+                            var count = 0
+                            for messier in messiers {
+                                objects.insert(messier, at: count)
+                                count += 1
+                            }
+                            let indexPath = IndexPath(row: 0, section: 0)
+                            self.tableView.insertRows(at: [indexPath], with: .automatic)
+                        }
+                    }
+                } catch let error as NSError {
+                    print("Error: \(error)")
+                }
+            } catch let error as NSError {
+                print("Error: \(error)")
+            }
+        }
+        
+    }
 
 }
 
