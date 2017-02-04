@@ -16,6 +16,7 @@
 		B04027371E46714500163D0C /* messier.json in Resources */ = {isa = PBXBuildFile; fileRef = B04027351E46714500163D0C /* messier.json */; };
 		B04027381E46714500163D0C /* MessierImages in Resources */ = {isa = PBXBuildFile; fileRef = B04027361E46714500163D0C /* MessierImages */; };
 		B040273A1E46721100163D0C /* Messier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04027391E46721100163D0C /* Messier.swift */; };
+		B040273D1E4675C500163D0C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B040273C1E4675C500163D0C /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B04027351E46714500163D0C /* messier.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = messier.json; sourceTree = "<group>"; };
 		B04027361E46714500163D0C /* MessierImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MessierImages; sourceTree = "<group>"; };
 		B04027391E46721100163D0C /* Messier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messier.swift; sourceTree = "<group>"; };
+		B040273C1E4675C500163D0C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				2FD63DAF1E4667F500DD9C25 /* Assets.xcassets */,
 				2FD63DB11E4667F500DD9C25 /* LaunchScreen.storyboard */,
 				2FD63DB41E4667F500DD9C25 /* Info.plist */,
+				B040273C1E4675C500163D0C /* Images.xcassets */,
 			);
 			path = "Star-Spotter-App";
 			sourceTree = "<group>";
@@ -108,6 +111,7 @@
 				TargetAttributes = {
 					2FD63DA21E4667F400DD9C25 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ZA2D47UJD6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,6 +142,7 @@
 				B04027371E46714500163D0C /* messier.json in Resources */,
 				2FD63DB31E4667F500DD9C25 /* LaunchScreen.storyboard in Resources */,
 				2FD63DB01E4667F500DD9C25 /* Assets.xcassets in Resources */,
+				B040273D1E4675C500163D0C /* Images.xcassets in Resources */,
 				B04027381E46714500163D0C /* MessierImages in Resources */,
 				2FD63DAE1E4667F500DD9C25 /* Main.storyboard in Resources */,
 			);
@@ -276,9 +281,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = ZA2D47UJD6;
 				INFOPLIST_FILE = "Star-Spotter-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "maga.Star-Spotter-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "Star-Spotter-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -288,9 +295,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = ZA2D47UJD6;
 				INFOPLIST_FILE = "Star-Spotter-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "maga.Star-Spotter-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "Star-Spotter-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

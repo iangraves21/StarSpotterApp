@@ -95,7 +95,6 @@ class MasterViewController: UITableViewController {
     }
 
     func ParseJson () {
-        
         if let path = Bundle.main.url(forResource: "messier", withExtension: "json") {
             do {
                 let jsonData = try Data(contentsOf: path, options: .mappedIfSafe)
