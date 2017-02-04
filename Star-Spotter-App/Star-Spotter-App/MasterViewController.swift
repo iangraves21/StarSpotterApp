@@ -25,6 +25,9 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        //Disabled add and edit buttons.
+        addButton.isEnabled = false
+        editButtonItem.isEnabled = false
     }
 
     override func viewWillAppear(_ animated: Bool) {
