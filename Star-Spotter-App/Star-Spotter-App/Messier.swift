@@ -63,14 +63,14 @@ struct Messier {
         
     }
     
-    func getAltAz(lat: Double, long: Double) -> String
+    func getAltAz(lat: Double, long: Double) -> (String, String)
     {
         let ret = altAz(lat: lat, long: long)
         
         let alt = "Alt: " + String(ret.0) + " degrees"
         let az = "Az: " + String(ret.1) + " degrees"
         
-        return alt + "\n" + az
+        return (alt, az)
     }
     
     func isVisible(lat:Double, long: Double) -> Bool
