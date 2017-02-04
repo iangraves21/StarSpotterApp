@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
         if let detail = self.detailItem {
             if let label = self.detailDescriptionLabel {
                 label.text = detail.Desc
+                detail.getAltAz(lat: 46.729777, long: -117.181738)
             }
         }
     }
