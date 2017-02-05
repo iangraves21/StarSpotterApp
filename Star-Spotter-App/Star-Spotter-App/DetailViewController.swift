@@ -41,6 +41,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var PitchOutlet: UILabel!
     @IBOutlet weak var YawOutlet: UILabel!
     
+    @IBOutlet weak var LiveNowButton: UIButton!
     @IBOutlet weak var CalibrateButtonOutlet: UIButton!
     @IBAction func CalibrateTapped(_ sender: UIButton) {
         yaw = 0
@@ -108,6 +109,7 @@ class DetailViewController: UIViewController {
                 YawOutlet.isHidden = true
                 CalibrateButtonOutlet.isHidden = true
                 ResetButtonOutlet.isHidden = true
+                LiveNowButton.isHidden = true
             }
         }
     }
