@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import CoreMotion
+
+let manager = CMMotionManager()
 
 class MasterViewController: UITableViewController {
 
@@ -29,6 +32,8 @@ class MasterViewController: UITableViewController {
         //Disabled add and edit buttons.
         addButton.isEnabled = false
         editButtonItem.isEnabled = false
+        
+        manager.deviceMotionUpdateInterval  = 0.2
     }
 
     override func viewWillAppear(_ animated: Bool) {

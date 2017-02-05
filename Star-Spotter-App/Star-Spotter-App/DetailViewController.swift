@@ -9,8 +9,6 @@
 import UIKit
 import CoreMotion
 
-let manager = CMMotionManager()
-
 extension UIImage {
     
     func resized(newSize:CGSize) -> UIImage {
@@ -26,6 +24,7 @@ extension UIImage {
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var CurrentLabelOutlet: UILabel!
     var ImageOutlet: UIImageView!
     
     var roll: Double = 0
@@ -42,11 +41,13 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var PitchOutlet: UILabel!
     @IBOutlet weak var YawOutlet: UILabel!
     
+    @IBOutlet weak var CalibrateButtonOutlet: UIButton!
     @IBAction func CalibrateTapped(_ sender: UIButton) {
         yaw = 0
         yawDiffOffset = yaw - az
     }
     
+    @IBOutlet weak var ResetButtonOutlet: UIButton!
     @IBAction func ResetTapped(_ sender: UIButton) {
         yawDiffOffset = 0
     }
@@ -79,7 +80,6 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
         
-        manager.deviceMotionUpdateInterval  = 0.2
         manager.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(motionData: CMDeviceMotion?, NSError) -> Void in self.outputRPY(data: motionData!)
             if (NSError != nil){
                 print("\(NSError)")
@@ -91,7 +91,8 @@ class DetailViewController: UIViewController {
     
     func outputRPY(data: CMDeviceMotion){
         if let detail = self.detailItem {
-            if detail.isVisible(lat: 46.729777, long: 46.729777) {
+            if detail.isVisible(lat: 46.729777, long: -117.181738) {
+                CurrentLabelOutlet.text = "Current"
                 if manager.isDeviceMotionAvailable {
                     roll    = data.attitude.roll * (180.0 / M_PI)
                     pitch   = data.attitude.pitch * (180.0 / M_PI)
@@ -100,6 +101,13 @@ class DetailViewController: UIViewController {
                     PitchOutlet.text = "Alt: \(String(pitch)) degrees"
                     YawOutlet.text = "Az: \(String(yaw)) degrees"
                 }
+            }
+            else {
+                CurrentLabelOutlet.text = "Not visible"
+                PitchOutlet.isHidden = true
+                YawOutlet.isHidden = true
+                CalibrateButtonOutlet.isHidden = true
+                ResetButtonOutlet.isHidden = true
             }
         }
     }
