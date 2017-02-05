@@ -9,6 +9,8 @@
 import UIKit
 import CoreMotion
 
+let manager = CMMotionManager()
+
 extension UIImage {
     
     func resized(newSize:CGSize) -> UIImage {
@@ -25,21 +27,38 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     var ImageOutlet: UIImageView!
-    let manager = CMMotionManager()
     
     var roll: Double = 0
     var pitch: Double = 0
     var yaw: Double = 0
+    var yawDiffOffset: Double = 0
+    var alt: Double = 0
+    var az: Double = 0
 
+    @IBOutlet weak var AltOutlet: UILabel!
+    @IBOutlet weak var AzOutlet: UILabel!
+    
+    // Current => Phones
     @IBOutlet weak var PitchOutlet: UILabel!
     @IBOutlet weak var YawOutlet: UILabel!
+    
+    @IBAction func CalibrateTapped(_ sender: UIButton) {
+        yaw = 0
+        yawDiffOffset = yaw - az
+    }
+    
+    @IBAction func ResetTapped(_ sender: UIButton) {
+        yawDiffOffset = 0
+    }
     
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = self.detailItem {
             if let label = self.detailDescriptionLabel {
                 label.text = detail.Desc
-                detail.getAltAz(lat: 46.729777, long: -117.181738)
+                (alt, az) = detail.altAz(lat: 46.729777, long: -117.181738)
+                AltOutlet.text = "Alt: \(alt) degrees"
+                AzOutlet.text = "Az: \(az) degrees"
             }
             
             // Update the title
@@ -69,14 +88,19 @@ class DetailViewController: UIViewController {
 
     }
     
+    
     func outputRPY(data: CMDeviceMotion){
-        if manager.isDeviceMotionAvailable {
-            roll    = data.attitude.roll * (180.0 / M_PI)
-            pitch   = data.attitude.pitch * (180.0 / M_PI)
-            yaw     = data.attitude.yaw * (180.0 / M_PI)
-            
-            PitchOutlet.text = "Pitch: \(String(pitch))"
-            YawOutlet.text = "Yaw: \(String(yaw))"
+        if let detail = self.detailItem {
+            if detail.isVisible(lat: 46.729777, long: 46.729777) {
+                if manager.isDeviceMotionAvailable {
+                    roll    = data.attitude.roll * (180.0 / M_PI)
+                    pitch   = data.attitude.pitch * (180.0 / M_PI)
+                    yaw     = data.attitude.yaw * (180.0 / M_PI) + yawDiffOffset
+                    
+                    PitchOutlet.text = "Alt: \(String(pitch)) degrees"
+                    YawOutlet.text = "Az: \(String(yaw)) degrees"
+                }
+            }
         }
     }
 
