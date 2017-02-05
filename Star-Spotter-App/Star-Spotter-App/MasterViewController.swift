@@ -20,11 +20,13 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
+       // self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.title = "Massier Objects"
+        
         ParseJson()
 
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-        self.navigationItem.rightBarButtonItem = addButton
+        //let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
+        //self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
@@ -77,11 +79,19 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) //as! CustomCell
 
         //let object = objects[indexPath.row] as! NSDate
         let object = objects[indexPath.row] as! Messier
-        cell.textLabel!.text = object.Messier
+        cell.textLabel?.text = object.Messier
+        
+        cell.imageView?.contentMode = .scaleToFill
+        cell.imageView?.image = UIImage(named: "\(object.Messier).jpg")
+        //let size = CGSize(width: 15, height: 20)
+        
+        //cell.CustomCellText.text = object.Messier
+        //cell.textLabel?.text = object.Messier
+        //cell.CustomCellImage.image = UIImage(named: "M01.jpg")
         return cell
     }
 
