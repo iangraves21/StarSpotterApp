@@ -89,6 +89,13 @@ class DetailViewController: UIViewController {
 
     }
     
+    @IBAction func unwindFromMapView(sender: UIStoryboardSegue) {
+        manager.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(motionData: CMDeviceMotion?, NSError) -> Void in self.outputRPY(data: motionData!)
+            if (NSError != nil){
+                print("\(NSError)")
+            }
+        })
+    }
     
     func outputRPY(data: CMDeviceMotion){
         if let detail = self.detailItem {
