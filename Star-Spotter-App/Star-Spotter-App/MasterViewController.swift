@@ -13,6 +13,8 @@ import CoreMotion
 struct Globals
 {
     static var yawOffset: Double = 0
+    static var targetAlt: Double = 0
+    static var targetAz: Double = 0
 }
 
 let manager = CMMotionManager()

@@ -169,9 +169,21 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="M01.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="x9c-uW-W38">
+                                <rect key="frame" x="64" y="219" width="11" height="10"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="M02.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="QMB-pa-4aD">
+                                <rect key="frame" x="193" y="405" width="7" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="currentPoint" destination="x9c-uW-W38" id="CCH-5S-s6R"/>
+                        <outlet property="targetPoint" destination="QMB-pa-4aD" id="xE3-82-LOr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NdI-4f-L3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -263,6 +275,10 @@
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="M01.jpg" width="2225" height="1350"/>
+        <image name="M02.jpg" width="2000" height="1333"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>

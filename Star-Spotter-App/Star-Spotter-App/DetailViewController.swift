@@ -58,6 +58,8 @@ class DetailViewController: UIViewController {
                 (alt, az) = detail.altAz(lat: 46.729777, long: -117.181738)
                 AltOutlet.text = "Alt: \(String(format: "%.2f", alt)) degrees"
                 AzOutlet.text = "Az: \(String(format: "%.2f", az)) degrees"
+                Globals.targetAlt = alt
+                Globals.targetAz = az
             }
             
             // Update the title
