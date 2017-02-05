@@ -28,21 +28,15 @@ struct Messier {
         let ra = (rah! + ram!/60 + ras!/3600) * 15
         let conv = (dech! < 0.0) ? -decm!/60 - decs!/3600 : decm!/60 + decs!/3600
         let dec = dech! + conv
-        
-        print(ra)
-        print(dec)
-        
         let rad = M_PI/180
         let J2000 = 2451545.0
         let seconds = 86400.0
         let currentJulian = NSDate().timeIntervalSince1970 / seconds - 0.5 + 2440588.0
-        print(currentJulian)
         let interval = currentJulian - J2000
-        print(interval)
-        let sidereal = (rad) * (280.16 + 360.9856235 * interval) - long * rad
-        print(sidereal)
+        let hour = (Double(NSCalendar.current.component(.hour, from: NSDate() as Date)) + 8).truncatingRemainder(dividingBy: 24)
+        let UT = hour + Double(NSCalendar.current.component(.minute, from: NSDate() as Date)) / 60.0
+        let sidereal = (100.46 + 0.985647 * interval + long + 15 * UT + 360).truncatingRemainder(dividingBy: 360)
         let HA = (sidereal - ra + 360).truncatingRemainder(dividingBy: 360)
-        print(HA)
         
         // Final Angle Calculations
         let x = cos(HA * rad) * cos(dec * rad)
@@ -54,10 +48,6 @@ struct Messier {
         
         let alt = asin(z2)/rad
         let az = atan2(y, x2)/rad + 180
-//        let UT = NSDate().
-//        let LST = (100.46 + 0.985647 * interval + long + 15 * UT + 360) % 360
-        print(alt)
-        print(az)
         
         return (alt, az)
         
