@@ -2,4 +2,54 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Star-Spotter-App/DetailViewController.swift"
+            timestampString = "507981302.001426"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Star_Spotter_App.DetailViewController.viewDidAppear (Swift.Bool) -&gt; ()"
+                  moduleName = "Star-Spotter-App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gene/Desktop/StartSpotterApp/Star-Spotter-App/Star-Spotter-App/DetailViewController.swift"
+                  timestampString = "507981313.880479"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Star_Spotter_App.DetailViewController.(viewDidAppear (Swift.Bool) -&gt; ()).(closure #1)"
+                  moduleName = "Star-Spotter-App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gene/Desktop/StartSpotterApp/Star-Spotter-App/Star-Spotter-App/DetailViewController.swift"
+                  timestampString = "507981313.882594"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

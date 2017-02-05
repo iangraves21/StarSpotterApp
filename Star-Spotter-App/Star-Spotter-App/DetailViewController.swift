@@ -81,21 +81,32 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
         
-        manager.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(motionData: CMDeviceMotion?, NSError) -> Void in self.outputRPY(data: motionData!)
-            if (NSError != nil){
-                print("\(NSError)")
-            }
-        })
+//        manager.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(motionData: CMDeviceMotion?, NSError) -> Void in self.outputRPY(data: motionData!)
+//            if (NSError != nil){
+//                print("\(NSError)")
+//            }
+//        })
 
     }
     
-    @IBAction func unwindFromMapView(sender: UIStoryboardSegue) {
+    // The MapView does not seemed to be linked in the chain of segues. Thus, the unwind function is not being called. 
+    // The current solution is to simply call this overrided function to get they gyroscope working every time this 
+    // view is displayed
+    override func viewDidAppear(_ animated: Bool) {
         manager.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(motionData: CMDeviceMotion?, NSError) -> Void in self.outputRPY(data: motionData!)
             if (NSError != nil){
                 print("\(NSError)")
             }
         })
     }
+    
+//    @IBAction func unwindFromMapView(sender: UIViewController) {
+//        manager.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(motionData: CMDeviceMotion?, NSError) -> Void in self.outputRPY(data: motionData!)
+//            if (NSError != nil){
+//                print("\(NSError)")
+//            }
+//        })
+//    }
     
     func outputRPY(data: CMDeviceMotion){
         if let detail = self.detailItem {
