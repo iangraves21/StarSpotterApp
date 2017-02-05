@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F0B04441E46E8B400458258 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B04431E46E8B400458258 /* MapViewController.swift */; };
+		2F0B04461E470B1E00458258 /* greenDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B04451E470B1E00458258 /* greenDot.png */; };
+		2F0B04481E470B3000458258 /* redDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B04471E470B3000458258 /* redDot.png */; };
 		2FD63DA71E4667F500DD9C25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD63DA61E4667F500DD9C25 /* AppDelegate.swift */; };
 		2FD63DA91E4667F500DD9C25 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD63DA81E4667F500DD9C25 /* MasterViewController.swift */; };
 		2FD63DAB1E4667F500DD9C25 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD63DAA1E4667F500DD9C25 /* DetailViewController.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		2F0B04431E46E8B400458258 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		2F0B04451E470B1E00458258 /* greenDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenDot.png; sourceTree = "<group>"; };
+		2F0B04471E470B3000458258 /* redDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redDot.png; sourceTree = "<group>"; };
 		2FD63DA31E4667F500DD9C25 /* Star-Spotter-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star-Spotter-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD63DA61E4667F500DD9C25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD63DA81E4667F500DD9C25 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F0B04491E470B3A00458258 /* sprites */ = {
+			isa = PBXGroup;
+			children = (
+				2F0B04471E470B3000458258 /* redDot.png */,
+				2F0B04451E470B1E00458258 /* greenDot.png */,
+			);
+			name = sprites;
+			sourceTree = "<group>";
+		};
 		2FD63D9A1E4667F400DD9C25 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +91,7 @@
 				2FD63DB11E4667F500DD9C25 /* LaunchScreen.storyboard */,
 				2FD63DB41E4667F500DD9C25 /* Info.plist */,
 				B040273C1E4675C500163D0C /* Images.xcassets */,
+				2F0B04491E470B3A00458258 /* sprites */,
 			);
 			path = "Star-Spotter-App";
 			sourceTree = "<group>";
@@ -143,11 +157,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B04027371E46714500163D0C /* messier.json in Resources */,
+				2F0B04461E470B1E00458258 /* greenDot.png in Resources */,
 				2FD63DB31E4667F500DD9C25 /* LaunchScreen.storyboard in Resources */,
 				2FD63DB01E4667F500DD9C25 /* Assets.xcassets in Resources */,
 				B040273D1E4675C500163D0C /* Images.xcassets in Resources */,
 				B04027381E46714500163D0C /* MessierImages in Resources */,
 				2FD63DAE1E4667F500DD9C25 /* Main.storyboard in Resources */,
+				2F0B04481E470B3000458258 /* redDot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

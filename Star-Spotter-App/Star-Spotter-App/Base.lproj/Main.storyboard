@@ -138,6 +138,7 @@
                         <outlet property="AzOutlet" destination="nhF-PX-hOV" id="n0b-wl-Ggz"/>
                         <outlet property="CalibrateButtonOutlet" destination="Qqc-bt-RJ5" id="HUY-iN-kEe"/>
                         <outlet property="CurrentLabelOutlet" destination="moO-AF-0kI" id="rJl-dX-QTG"/>
+                        <outlet property="LiveNowButton" destination="e3C-bt-vGF" id="ULZ-wY-GFM"/>
                         <outlet property="PitchOutlet" destination="enJ-WF-wSQ" id="OtA-QT-8wT"/>
                         <outlet property="ResetButtonOutlet" destination="b81-sC-Zzv" id="238-Rv-Med"/>
                         <outlet property="YawOutlet" destination="caX-fh-2bg" id="mgh-rR-AHG"/>
@@ -178,7 +179,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.057644329969999998" green="0.098755009470000002" blue="0.13345438239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="currentPoint" destination="x9c-uW-W38" id="CCH-5S-s6R"/>
