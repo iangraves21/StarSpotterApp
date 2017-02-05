@@ -21,7 +21,7 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
        // self.navigationItem.leftBarButtonItem = self.editButtonItem
-        self.title = "Massier Objects"
+        self.title = "Messier Objects"
         
         ParseJson()
 
