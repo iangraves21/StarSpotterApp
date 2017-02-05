@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -73,20 +73,20 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alt:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGo-6P-22f">
-                                <rect key="frame" x="16" y="384" width="31" height="26"/>
+                                <rect key="frame" x="16" y="377" width="31" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Az:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhF-PX-hOV">
-                                <rect key="frame" x="16" y="444" width="30" height="26"/>
+                                <rect key="frame" x="16" y="429" width="30" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moO-AF-0kI">
-                                <rect key="frame" x="157" y="489" width="62" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Coordinates:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moO-AF-0kI">
+                                <rect key="frame" x="90.5" y="479" width="195" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -111,8 +111,8 @@
                         <constraints>
                             <constraint firstItem="nhF-PX-hOV" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="5RL-Kc-TB9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b81-sC-Zzv" secondAttribute="trailing" constant="28" id="5Ze-ab-qbT"/>
-                            <constraint firstItem="rGo-6P-22f" firstAttribute="top" secondItem="0XM-y9-sOw" secondAttribute="bottom" constant="37" id="9It-dk-RIA"/>
-                            <constraint firstItem="nhF-PX-hOV" firstAttribute="top" secondItem="rGo-6P-22f" secondAttribute="bottom" constant="34" id="9bY-nv-CB0"/>
+                            <constraint firstItem="rGo-6P-22f" firstAttribute="top" secondItem="0XM-y9-sOw" secondAttribute="bottom" constant="30" id="9It-dk-RIA"/>
+                            <constraint firstItem="nhF-PX-hOV" firstAttribute="top" secondItem="rGo-6P-22f" secondAttribute="bottom" constant="26" id="9bY-nv-CB0"/>
                             <constraint firstItem="moO-AF-0kI" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="9vJ-gD-YwN"/>
                             <constraint firstItem="caX-fh-2bg" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="E76-Bj-OYc"/>
                             <constraint firstItem="Qqc-bt-RJ5" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="22" id="GYG-6S-oAO"/>
@@ -128,7 +128,7 @@
                             <constraint firstItem="rGo-6P-22f" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="rZ9-sr-ljc"/>
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="Qqc-bt-RJ5" secondAttribute="bottom" constant="24" id="yjq-hr-0Md"/>
                             <constraint firstItem="enJ-WF-wSQ" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="zc8-O6-GC6"/>
-                            <constraint firstItem="moO-AF-0kI" firstAttribute="top" secondItem="nhF-PX-hOV" secondAttribute="bottom" constant="19" id="zcA-iv-7ny"/>
+                            <constraint firstItem="moO-AF-0kI" firstAttribute="top" secondItem="nhF-PX-hOV" secondAttribute="bottom" constant="24" id="zcA-iv-7ny"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
