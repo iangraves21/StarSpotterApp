@@ -11,9 +11,9 @@ import CoreMotion
 
 extension UIImage {
     
-    func resized(newSize:CGSize) -> UIImage {
+    func resized(newSize:CGSize, xpos: CGFloat = 0, ypos: CGFloat = 0) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main.scale)
-        self.draw(in: CGRect(x: 0, y: 50, width: newSize.width, height: newSize.height))
+        self.draw(in: CGRect(x: xpos, y: ypos, width: newSize.width, height: newSize.height))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
@@ -68,7 +68,7 @@ class DetailViewController: UIViewController {
             // Display the image
             let imgWidth = UIScreen.main.bounds.size.width
             let imgHeight = imgWidth / 1.25
-            let image = UIImage(named: detail.Messier + ".jpg")?.resized(newSize: CGSize(width: imgWidth, height: imgHeight))//UIImage(named: detail.Messier + ".jpg")
+            let image = UIImage(named: detail.Messier + ".jpg")?.resized(newSize: CGSize(width: imgWidth, height: imgHeight), ypos: 50)//UIImage(named: detail.Messier + ".jpg")
             ImageOutlet = UIImageView(image: image)
             ImageOutlet.contentMode = UIViewContentMode.scaleToFill
             self.view.addSubview(ImageOutlet)

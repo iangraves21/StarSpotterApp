@@ -84,9 +84,13 @@ class MasterViewController: UITableViewController {
         //let object = objects[indexPath.row] as! NSDate
         let object = objects[indexPath.row] as! Messier
         cell.textLabel?.text = object.Messier
+        cell.textLabel?.textAlignment = .center
         
-        cell.imageView?.contentMode = .scaleToFill
-        cell.imageView?.image = UIImage(named: "\(object.Messier).jpg")
+        //cell.imageView?.contentMode = .scaleToFill
+        cell.separatorInset = UIEdgeInsets.zero
+        let cellImageViewWidth = cell.imageView?.bounds.width
+        let cellImageViewHeight = cell.imageView?.bounds.height
+        cell.imageView?.image = UIImage(named: "\(object.Messier).jpg")?.resized(newSize: CGSize(width: cellImageViewWidth!, height: cellImageViewHeight!))
         //let size = CGSize(width: 15, height: 20)
         
         //cell.CustomCellText.text = object.Messier
