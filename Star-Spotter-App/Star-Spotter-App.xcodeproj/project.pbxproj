@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F0B04441E46E8B400458258 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B04431E46E8B400458258 /* MapViewController.swift */; };
 		2FD63DA71E4667F500DD9C25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD63DA61E4667F500DD9C25 /* AppDelegate.swift */; };
 		2FD63DA91E4667F500DD9C25 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD63DA81E4667F500DD9C25 /* MasterViewController.swift */; };
 		2FD63DAB1E4667F500DD9C25 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD63DAA1E4667F500DD9C25 /* DetailViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F0B04431E46E8B400458258 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2FD63DA31E4667F500DD9C25 /* Star-Spotter-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star-Spotter-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD63DA61E4667F500DD9C25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD63DA81E4667F500DD9C25 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				B04027361E46714500163D0C /* MessierImages */,
 				2FD63DA61E4667F500DD9C25 /* AppDelegate.swift */,
 				2FD63DA81E4667F500DD9C25 /* MasterViewController.swift */,
+				2F0B04431E46E8B400458258 /* MapViewController.swift */,
 				2FD63DAA1E4667F500DD9C25 /* DetailViewController.swift */,
 				2FD63DAC1E4667F500DD9C25 /* Main.storyboard */,
 				2FD63DAF1E4667F500DD9C25 /* Assets.xcassets */,
@@ -158,6 +161,7 @@
 				B040273A1E46721100163D0C /* Messier.swift in Sources */,
 				2FD63DAB1E4667F500DD9C25 /* DetailViewController.swift in Sources */,
 				2FD63DA91E4667F500DD9C25 /* MasterViewController.swift in Sources */,
+				2F0B04441E46E8B400458258 /* MapViewController.swift in Sources */,
 				2FD63DA71E4667F500DD9C25 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
