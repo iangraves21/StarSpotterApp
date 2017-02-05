@@ -30,7 +30,6 @@ class DetailViewController: UIViewController {
     var roll: Double = 0
     var pitch: Double = 0
     var yaw: Double = 0
-    var yawDiffOffset: Double = 0
     var alt: Double = 0
     var az: Double = 0
 
@@ -43,13 +42,12 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var CalibrateButtonOutlet: UIButton!
     @IBAction func CalibrateTapped(_ sender: UIButton) {
-        yaw = 0
-        yawDiffOffset = yaw - az
+        Globals.yawOffset = az - yaw
     }
     
     @IBOutlet weak var ResetButtonOutlet: UIButton!
     @IBAction func ResetTapped(_ sender: UIButton) {
-        yawDiffOffset = 0
+        Globals.yawOffset = 0
     }
     
     func configureView() {
@@ -58,8 +56,8 @@ class DetailViewController: UIViewController {
             if let label = self.detailDescriptionLabel {
                 label.text = detail.Desc
                 (alt, az) = detail.altAz(lat: 46.729777, long: -117.181738)
-                AltOutlet.text = "Alt: \(alt) degrees"
-                AzOutlet.text = "Az: \(az) degrees"
+                AltOutlet.text = "Alt: \(String(format: "%.2f", alt)) degrees"
+                AzOutlet.text = "Az: \(String(format: "%.2f", az)) degrees"
             }
             
             // Update the title
@@ -96,10 +94,10 @@ class DetailViewController: UIViewController {
                 if manager.isDeviceMotionAvailable {
                     roll    = data.attitude.roll * (180.0 / M_PI)
                     pitch   = data.attitude.pitch * (180.0 / M_PI)
-                    yaw     = data.attitude.yaw * (180.0 / M_PI) + yawDiffOffset
+                    yaw     = -1.0 * data.attitude.yaw * (180.0 / M_PI)
                     
-                    PitchOutlet.text = "Alt: \(String(pitch)) degrees"
-                    YawOutlet.text = "Az: \(String(yaw)) degrees"
+                    PitchOutlet.text = "Alt: \(String(format: "%.2f", pitch)) degrees"
+                    YawOutlet.text = "Az: \(String(format: "%.2f", (adjustYaw(yaw: yaw) + Globals.yawOffset + 360).truncatingRemainder(dividingBy: 360))) degrees"
                 }
             }
             else {
@@ -110,6 +108,16 @@ class DetailViewController: UIViewController {
                 ResetButtonOutlet.isHidden = true
             }
         }
+    }
+    
+    func adjustYaw(yaw: Double) -> Double
+    {
+        if(yaw < 0.0)
+        {
+            return 360.0 + yaw
+        }
+        
+        return yaw
     }
 
     override func didReceiveMemoryWarning() {

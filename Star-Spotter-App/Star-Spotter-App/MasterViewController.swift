@@ -9,6 +9,12 @@
 import UIKit
 import CoreMotion
 
+// Was going to have more globals
+struct Globals
+{
+    static var yawOffset: Double = 0
+}
+
 let manager = CMMotionManager()
 
 class MasterViewController: UITableViewController {
@@ -33,8 +39,9 @@ class MasterViewController: UITableViewController {
         addButton.isEnabled = false
         editButtonItem.isEnabled = false
         
-        manager.deviceMotionUpdateInterval  = 0.2
-    }
+        manager.deviceMotionUpdateInterval  = 0.05
+        }
+
 
     override func viewWillAppear(_ animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
