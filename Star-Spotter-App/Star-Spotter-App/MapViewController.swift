@@ -19,7 +19,10 @@ class MapViewController: UIViewController {
     var yaw: Double = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        currentPoint.image = UIImage(named: "greenDot.png")
+        targetPoint.image = UIImage(named: "redDot.png:")
+        targetPoint.isOpaque = true
         // Do any additional setup after loading the view.
         targetPoint.frame.origin.x = CGFloat((Globals.targetAlt / 90.0) * maxX)
         targetPoint.frame.origin.y = CGFloat((Globals.targetAz / 360.0) * maxY)
