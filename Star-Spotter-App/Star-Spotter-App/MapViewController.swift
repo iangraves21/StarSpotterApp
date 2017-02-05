@@ -15,17 +15,18 @@ class MapViewController: UIViewController {
     @IBOutlet weak var targetPoint: UIImageView!
     let maxY = 656.0
     let maxX = 368.0
+    let minY = 64.0
     var pitch: Double = 0.0
     var yaw: Double = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         
         currentPoint.image = UIImage(named: "greenDot.png")
-        targetPoint.image = UIImage(named: "redDot.png:")
-        targetPoint.isOpaque = true
+        targetPoint.image = UIImage(named: "redDot.png")
+        //targetPoint.isOpaque = true
         // Do any additional setup after loading the view.
         targetPoint.frame.origin.x = CGFloat((Globals.targetAlt / 90.0) * maxX)
-        targetPoint.frame.origin.y = CGFloat((Globals.targetAz / 360.0) * maxY)
+        targetPoint.frame.origin.y = CGFloat((Globals.targetAz / 360.0) * (maxY - minY) + minY)
         
         manager.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(motionData: CMDeviceMotion?, NSError) -> Void in self.outputRPY(data: motionData!)
             if (NSError != nil){
@@ -45,7 +46,7 @@ class MapViewController: UIViewController {
             yaw = -1.0 * data.attitude.yaw * (180.0 / M_PI)
             let adjYaw = (adjustYaw(yaw: yaw) + Globals.yawOffset + 360).truncatingRemainder(dividingBy: 360)
             currentPoint.frame.origin.x = CGFloat((pitch / 90.0) * maxX)
-            currentPoint.frame.origin.y = CGFloat((adjYaw / 360.0) * maxY)
+            currentPoint.frame.origin.y = CGFloat((adjYaw / 360.0) * (maxY - minY) + minY)
         }
     }
     
